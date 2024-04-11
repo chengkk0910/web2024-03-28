@@ -27,12 +27,17 @@
         }
 
         /* ~ 兄弟姊妹同輩 全部 */
-        .my-parent ~ div {
+        .my-parent~div {
             /* color: blue; */
         }
 
         .my-parent {
-            color: lightblue;
+            /* color: lightblue; */
+        }
+
+        /* ~ 兄弟姊妹同輩 鄰近的 */
+        #liu+div {
+            color: brown;
         }
 
         /*  */
@@ -43,12 +48,20 @@
     <!-- , > ~ + 空格 . : -->
 
     <div>
-        <div class="my-parent">
+        <div class="my-parent" id="liu">
             劉備
+        </div>
+        <div>
+            劉備背影分身1
+        </div>
+        <div>
+            劉備背影分身2
         </div>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉禪
         </p>
+
+
     </div>
 
     <div>
