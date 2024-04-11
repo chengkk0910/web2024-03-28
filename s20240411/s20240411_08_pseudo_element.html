@@ -17,16 +17,27 @@
         th {
             border: 1px solid black;
         }
-        .price{
+
+        .price {
             text-align: left;
         }
 
-        .price::before{
+        .price::before {
             content: '$';
         }
 
-        .price::after{
+        .price::after {
             content: '元';
+        }
+
+        /* odd 基數 even偶數 */
+        tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        td:hover {
+            background-color: lightpink;
+            font-size: x-large;
         }
     </style>
 
@@ -71,6 +82,28 @@
         <tr>
             <td>
                 3
+            </td>
+            <td>
+                礦泉水
+            </td>
+            <td class="price">
+                50
+            </td>
+        </tr>
+        <tr>
+            <td>
+                4
+            </td>
+            <td>
+                礦泉水
+            </td>
+            <td class="price">
+                50
+            </td>
+        </tr>
+        <tr>
+            <td>
+                5
             </td>
             <td>
                 礦泉水
