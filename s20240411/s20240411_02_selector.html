@@ -6,7 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* , 都選 */
+        p,
+        div {
+            /* color: darkgreen; */
+        }
 
+        /* > */
+        div>p {
+            color: red;
+        }
+
+
+        .my-parent>p {
+            color: lightpink;
+        }
 
     </style>
 </head>
@@ -14,7 +28,7 @@
 <body>
     <!-- , > ~ + 空格 . : -->
 
-    <div>
+    <div class="my-parent">
         劉備
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉禪
@@ -29,9 +43,11 @@
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關興
         <div>
-            <p>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關小興
-            </p>
+            <h1>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關小興
+                </p>
+            </h1>
         </div>
         </p>
     </div>
