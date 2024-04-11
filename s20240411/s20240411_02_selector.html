@@ -12,31 +12,48 @@
             /* color: darkgreen; */
         }
 
-        /* > */
+        /* > 後代一層*/
         div>p {
-            color: red;
+            /* color: red; */
         }
-
 
         .my-parent>p {
-            color: lightpink;
+            /* color: lightpink; */
         }
 
+        /* 空格 後代全部*/
+        div p {
+            /* color: purple; */
+        }
+
+        /* .my-parent ~ div {
+            color: blue;
+        } */
+
+        .my-parent {
+            color: lightblue;
+        }
+
+        /*  */
     </style>
 </head>
 
 <body>
     <!-- , > ~ + 空格 . : -->
 
-    <div class="my-parent">
-        劉備
+    <div>
+        <div class="my-parent">
+            劉備
+        </div>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;劉禪
         </p>
     </div>
 
     <div>
-        關羽
+        <div class="my-parent">
+            關羽
+        </div>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;關平
         </p>
@@ -54,11 +71,17 @@
 
 
     <div>
-        張飛
-        <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;張苞
-        </p>
+        <div class="my-parent">
+            張飛
+        </div>
     </div>
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;張苞
+    </p>
+    </div>
+
+
+
 
 </body>
 
