@@ -10,13 +10,20 @@
             width: 400px;
             height: 300px;
             background-color: lightblue;
-            background-image: url("https://picsum.photos/id/20/400/300");
+            background-image: url("https://picsum.photos/id/20/800/600");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: cover;
+            /* opacity: 0.1; */
         }
 
-        table{
+        .box {}
+
+        table {
             width: 800px;
             height: 600px;
-            background-image: url("https://picsum.photos/id/22/800/600");
+            background-image: url("./images/bg.png");
+            background-repeat: no-repeat;
 
         }
     </style>
@@ -33,10 +40,17 @@
     <!-- 圖片 方法2 bgimage -->
     <h3>bg image</h3>
     <div class="box">
-
+        <h2>h2 Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ipsum?</p>
     </div>
     <br>
     <hr><br>
+
+    <!-- box include img -->
+    <div class="box2">
+        <h3>h3 Lorem ipsum dolor sit amet.</h3>
+        <img src="https://picsum.photos/id/20/400/300" alt="">
+    </div>
 
     <!-- table bg-image -->
     <table>
