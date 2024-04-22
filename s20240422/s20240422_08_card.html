@@ -22,10 +22,12 @@
         }
 
         .card {
+            position: relative;
             width: 100%;
             height: 50vh;
             /* background-color: lightblue; */
             padding-top: 10px;
+            /* border: 1px solid black; */
         }
 
         .card-img {
@@ -45,6 +47,17 @@
             border: 1px solid #ccc;
         }
 
+        .card-img>.card-logo {
+            position: absolute;
+            top: 5%;
+            right: 15%;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            /* background-color: red; */
+
+        }
+
         .card-text {
             /* border: 2px solid black;
             padding: 10px;
@@ -53,6 +66,10 @@
             height: 50%;
             background-color: white;
             margin: 0 auto;
+            margin: 10px 20px 30px 40px;
+            margin: 10px 20px;
+            margin: 10px;
+            margin: auto;
             margin-top: 20px;
             padding: 10px;
         }
@@ -61,12 +78,39 @@
 
 <body>
     <div class="container">
+        <!-- row1 -->
         <div class="row">
             <div class="content">
                 <!-- 1 -->
                 <div class="card">
                     <div class="card-img">
                         <img src="./images/card01.png" alt="" srcset="">
+                        <img src="./images/logo.png" alt="" class="card-logo">
+                        <!-- <div class="card-logo">
+                            Hello
+                        </div> -->
+                    </div>
+                    <div class="card-text">
+                        <h3>
+                            為自己學習最迷人
+                        </h3>
+                        <p>
+                            PressPlay Academy 線上學習平台
+                            <br>
+                            線上學習的型態不只一種，
+                            <br>
+                            在 PPA 線上學習平台找到適合你自學的方式，迎接新改變！
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <!-- 1 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="./images/card01.png" alt="" srcset="">
+                        <img src="./images/logo.png" alt="" class="card-logo">
                     </div>
                     <div class="card-text">
                         <h3>
@@ -87,26 +131,7 @@
                 <div class="card">
                     <div class="card-img">
                         <img src="./images/card01.png" alt="" srcset="">
-                    </div>
-                    <div class="card-text">
-                        <h3>
-                            為自己學習最迷人
-                        </h3>
-                        <p>
-                            PressPlay Academy 線上學習平台
-                            <br>
-                            線上學習的型態不只一種，
-                            <br>
-                            在 PPA 線上學習平台找到適合你自學的方式，迎接新改變！
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="content">
-                <!-- 1 -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./images/card01.png" alt="" srcset="">
+                        <img src="./images/logo.png" alt="" class="card-logo">
                     </div>
                     <div class="card-text">
                         <h3>
@@ -123,12 +148,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="row">
-
-        </div>
-
-
 
     </div>
 </body>
