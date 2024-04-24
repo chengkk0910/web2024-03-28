@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* overflow: hidden; */
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+
+        }
+
+        .box1 {
+            background-color: lightblue;
+            overflow: hidden;
+        }
+
+        .box2 {
+            background-color: lightpink;
+            overflow: auto;
+        }
+
+        .box3 {
+            background-color: lightgreen;
+            /* overflow: auto; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box3>img {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            width: 100%;
+        }
+
+        .box4 {
+            background-image: url('./images/p1.png');
+            background-size: cover;
+            background-position: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- box1 hidden -->
+    <div class="box box1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas vero esse quos non suscipit accusantium
+        voluptatum exercitationem qui aspernatur earum nobis sequi vel autem labore numquam, rem voluptates quibusdam
+        perferendis repudiandae odit repellat ducimus obcaecati quae. Facilis possimus autem earum dolorem voluptate
+        quaerat fugit iste esse commodi repudiandae placeat quos odit, repellat, voluptatem quisquam fugiat incidunt
+        tenetur, iusto error nesciunt. Sint natus nisi nulla, voluptates, quasi quis alias veniam qui maxime porro
+        aperiam perspiciatis veritatis quod voluptatibus eligendi architecto sequi culpa! Cum consequuntur illum
+        praesentium vitae, est et maxime nihil eum esse provident beatae eaque ratione neque suscipit voluptate quaerat
+        iure tenetur ea similique deleniti amet architecto commodi. Quia suscipit, aliquam eos commodi exercitationem
+        doloribus molestias! Repudiandae modi ut perspiciatis eligendi ipsam voluptate delectus nulla rem officia
+        nostrum! Rerum omnis sit impedit assumenda vero praesentium amet officiis voluptatem cupiditate odit accusamus
+        fugiat maiores maxime dicta consectetur magnam veniam harum quod aut nihil, aperiam illo hic! Veritatis iure
+        consectetur odit voluptatem aut ad cum et, sequi, fugit delectus architecto iusto quae nemo maiores voluptatibus
+        beatae perspiciatis ullam. Voluptatibus doloribus excepturi optio, animi perspiciatis nihil corporis vero fugiat
+        esse laudantium vitae quisquam. Doloremque quaerat voluptas quia, iste reiciendis soluta recusandae at!
+    </div>
+
+    <!-- box2 scroll -->
+    <div class="box box2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda quas vero esse quos non suscipit accusantium
+        voluptatum exercitationem qui aspernatur earum nobis sequi vel autem labore numquam, rem voluptates quibusdam
+        perferendis repudiandae odit repellat ducimus obcaecati quae. Facilis possimus autem earum dolorem voluptate
+        quaerat fugit iste esse commodi repudiandae placeat quos odit, repellat, voluptatem quisquam fugiat incidunt
+        tenetur, iusto error nesciunt. Sint natus nisi nulla, voluptates, quasi quis alias veniam qui maxime porro
+        aperiam perspiciatis veritatis quod voluptatibus eligendi architecto sequi culpa! Cum consequuntur illum
+        praesentium vitae, est et maxime nihil eum esse provident beatae eaque ratione neque suscipit voluptate quaerat
+        iure tenetur ea similique deleniti amet architecto commodi. Quia suscipit, aliquam eos commodi exercitationem
+        doloribus molestias! Repudiandae modi ut perspiciatis eligendi ipsam voluptate delectus nulla rem officia
+        nostrum! Rerum omnis sit impedit assumenda vero praesentium amet officiis voluptatem cupiditate odit accusamus
+        fugiat maiores maxime dicta consectetur magnam veniam harum quod aut nihil, aperiam illo hic! Veritatis iure
+        consectetur odit voluptatem aut ad cum et, sequi, fugit delectus architecto iusto quae nemo maiores voluptatibus
+        beatae perspiciatis ullam. Voluptatibus doloribus excepturi optio, animi perspiciatis nihil corporis vero fugiat
+        esse laudantium vitae quisquam. Doloremque quaerat voluptas quia, iste reiciendis soluta recusandae at!
+    </div>
+
+
+    <!-- box2 scroll -->
+    <div class="box box3">
+        <img src="https://picsum.photos/id/237/800/800" alt="">
+    </div>
+
+    <!-- box2 scroll -->
+    <div class="box box4">
+        <!-- <img src="https://picsum.photos/id/237/800/800" alt=""> -->
+    </div>
+
+</body>
+
+</html>
