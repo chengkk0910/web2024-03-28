@@ -29,10 +29,11 @@
             flex-wrap: wrap;
 
             justify-content: space-around;
-            align-items: center;
+            align-items: start;
         }
 
         .item {
+            margin-top: 50px;
             width: 30%;
             height: 150px;
             background-color: #ccc;
@@ -41,7 +42,7 @@
         }
 
         .item-hide {
-            /* opacity: 0.3; */
+            opacity: 0.3;
         }
 
         .item>img {
@@ -51,6 +52,11 @@
         }
         .item-text{
             padding-top: 66px;
+        }
+        .item:hover{
+            width: 32%;
+            height: 155px;
+            transition: 0.5s;
         }
     </style>
 </head>
@@ -77,9 +83,9 @@
             <div class="item item-hide">
                 <img src="https://picsum.photos/id/37/400/300" alt="" srcset="">
             </div>
-            <div class="item item-hide item-text">
+            <!-- <div class="item item-hide item-text">
                 55688
-            </div>
+            </div> -->
         </div>
     </div>
 
