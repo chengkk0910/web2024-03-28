@@ -12,12 +12,17 @@
     border-bottom: 0px;
     margin: auto;
     padding: 2px;
-    display: flex;
-    justify-content: center;
 
 }
 
-.header>img {}
+
+
+.header>a>img {
+    display: block;
+    margin: auto;
+    width: 994px;
+    height: 60px;
+}
 
 /* container */
 .container {
@@ -68,6 +73,13 @@
     height: calc(768px - 65px - 20px);
     /* background-color: blue; */
 
+}
+.marquee{
+    font-family: '標楷體';
+    width: 770px;
+    height: 29px;
+    font-size: 24px;
+    color: #0000FF;
 }
 
 .main-header {
