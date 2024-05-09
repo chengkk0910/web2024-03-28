@@ -54,6 +54,44 @@
     border: 1px solid black;
     border-right: 0px;
     border-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.aside-header>.aside-title {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: '標楷體';
+    color:#FF00FF;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 8px;
+
+    border-bottom: 1px solid black;
+    /* text-decoration: underline black;
+    text-underline-offset: 5px; */
+
+}
+
+.aside-header>.box {
+    width: 200px;
+    height: 35px;
+    /* background-color: aquamarine; */
+    background-image: url('../images/menu1.png');
+
+    font-size: 16px;
+    font-family: '標楷體';
+    color:#000000;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 8px;
+
+}
+.aside-header>.box:hover {
+    background-image: url('../images/menu2.png');
+
 }
 
 .aside-footer {
@@ -74,7 +112,8 @@
     /* background-color: blue; */
 
 }
-.marquee{
+
+.marquee {
     font-family: '標楷體';
     width: 770px;
     height: 29px;
