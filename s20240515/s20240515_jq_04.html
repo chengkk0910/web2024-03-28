@@ -19,6 +19,7 @@
     </p>
 
     <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="blueBtn">blueBtn</button>
 
     <!-- js or jqery -->
     <script>
@@ -27,10 +28,19 @@
         $(document).ready(function () {
             // 
             $('p').click(function () {
-                $(this).css('color', 'red');
+                // chatgpt
+                // 日報
+
             });
+         
             $('#myBtn').click(function () {
+                // 週報
                 $('p').css('color', 'green');
+
+            });
+
+            $('#blueBtn').click(function () {
+                $('p').css('color', 'blue');
             });
         });
 
