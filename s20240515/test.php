@@ -8,6 +8,17 @@ for ($i = 1; $i <= 100; $i++) {
 }
 
 
+$name = 'kai';
+$mobile = '0911-111-111';
+// 1
+$result = "Hello" . $name . $mobile;
+
+// 2
+$result = "Hello $name $mobile";
+
+// 3
+$result = 'Hello $name $mobile';
+
 ?>
 
 <!DOCTYPE html>
