@@ -57,7 +57,7 @@
         td,
         th {
             border-collapse: collapse;
-            border: 1px solid black;
+            /* border: 1px solid black; */
         }
 
         table {
@@ -66,14 +66,14 @@
         }
 
         th {
-            height: 100px;
-            background-color: lightblue;
+            height: 30px;
+            /* background-color: lightblue; */
         }
 
         td {
             width: 200px;
             height: 200px;
-            background-color: red;
+            /* background-color: red; */
         }
     </style>
 </head>
@@ -83,9 +83,12 @@
         <h1>color change</h1>
     </header>
     <div class="container">
-        <button type="button" id="blackBtn" class="myBtn" data-color="black" data-text="BLACK BTN">blackBtn</button>
-        <button type="button" id="blueBtn" class="myBtn" data-color="blue" data-text="BLUE BTN">blueBtn</button>
-        <button type="button" id="redBtn" class="myBtn" data-color="red" data-text="RED BTN">redBtn</button>
+        <button type="button" id="blackBtn" class="myBtn" data-color="black" data-text="BLACK BTN" data-img="21"
+            data-local-img="pic01.jpg">blackBtn</button>
+        <button type="button" id="blueBtn" class="myBtn" data-color="blue" data-text="BLUE BTN" data-img="22"
+            data-local-img="pic02.jpg">blueBtn</button>
+        <button type="button" id="redBtn" class="myBtn" data-color="red" data-text="RED BTN" data-img="25"
+            data-local-img="pic03.jpg">redBtn</button>
     </div>
 
     <div class="container">
@@ -98,12 +101,12 @@
         <table>
             <tr>
                 <th>
-                    Url = <span>https://picsum.photos/id/22/800/600</span>
+                    FileName = <span id="imgFileNameSpan">22.jpg</span>
                 </th>
             </tr>
             <tr>
                 <td>
-                    <img src="https://picsum.photos/id/22/800/600" alt="">
+                    <img id="myImg" src="https://picsum.photos/id/22/800/600" alt="">
                 </td>
             </tr>
         </table>
@@ -122,8 +125,9 @@
             const blueBtn = $('#blueBtn');
             const redBtn = $('#redBtn');
             const myBtn = $('.myBtn');
-
+            const myImg = $('#myImg');
             const resultSpan = $('#resultSpan');
+            const imgFileNameSpan = $('#imgFileNameSpan');
 
             console.log('blueBtn', blueBtn);
 
@@ -140,11 +144,20 @@
 
                 let getDataColor = nowBtn.attr('data-color');
                 let getDataText = nowBtn.attr('data-text');
+                let getDataImg = nowBtn.attr('data-img');
+                let getDataLocalImg = nowBtn.attr('data-local-img');
+                // let imgUrl = `https://picsum.photos/id/${getDataImg}/800/600`;
+                let imgUrl = `./images/${getDataLocalImg}`;
+
                 console.log('getDataColor', getDataColor);
                 console.log('getDataText', getDataText);
+                console.log('getDataLocalImg', getDataLocalImg);
+                console.log('imgUrl', imgUrl);
+
                 resultSpan.css('color', getDataColor);
                 resultSpan.text(getDataText);
-
+                myImg.attr('src', imgUrl);
+                imgFileNameSpan.text(getDataLocalImg)
             })
 
 
