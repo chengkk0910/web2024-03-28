@@ -9,12 +9,66 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- css -->
     <style>
+        * {
+            box-sizing: border-box;
+        }
 
+        .container {
+            margin: auto;
+            margin-bottom: 20px;
+            text-align: center;
+
+            /* background-color:lightblue; */
+            /* width: 80%; */
+        }
+
+        .myBtn {
+            width: 200px;
+            height: 200px;
+            /* background-color: ; */
+            font-size: x-large;
+            border: 2px solid black;
+        }
+
+        #blackBtn {
+            color: black;
+        }
+
+        #redBtn {
+            color: red;
+        }
+
+        #blueBtn {
+            color: blue;
+        }
+
+        #resultSpan {
+            color: red;
+        }
+
+        #resultDiv{
+            font-size: 30px;
+        }
     </style>
 </head>
 
 <body>
-    
+    <header class="container">
+        <h1>color change</h1>
+    </header>
+    <div class="container">
+        <button type="button" id="blackBtn" class="myBtn">blackBtn</button>
+        <button type="button" id="blueBtn" class="myBtn">blueBtn</button>
+        <button type="button" id="redBtn" class="myBtn">redBtn</button>
+    </div>
+
+    <div class="container">
+        <div id="resultDiv">
+            Hello <span id="resultSpan">XXX</span> color
+        </div>
+    </div>
+
+
     <!-- js or jqery -->
     <script>
         // 方法一
