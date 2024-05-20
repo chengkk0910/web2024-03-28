@@ -46,7 +46,7 @@
             color: red;
         }
 
-        #resultDiv{
+        #resultDiv {
             font-size: 30px;
         }
     </style>
@@ -73,6 +73,41 @@
     <script>
         // 方法一
         $(document).ready(function () {
+
+            // 1.綁定
+
+            // jquery obj
+            const blackBtn = $('#blackBtn');
+            const blueBtn = $('#blueBtn');
+            const redBtn = $('#redBtn');
+            const resultSpan = $('#resultSpan');
+
+            console.log('blueBtn', blueBtn);
+
+            // 原生js
+            // const blueBtnJs = document.getElementById('blueBtn');
+            // console.log('blueBtnJs', blueBtnJs);
+
+
+            // 2.action / method 
+            blackBtn.click(function () {
+                console.log('blackBtn ok');
+                resultSpan.text('BLACK');
+                resultSpan.css('color', 'black');
+            })
+
+            blueBtn.click(function () {
+                console.log('blueBtn ok');
+                resultSpan.text('BLUE');
+                resultSpan.css('color', 'blue');
+            })
+
+            redBtn.click(function () {
+                console.log('redBtn ok');
+                resultSpan.text('RED');
+                resultSpan.css('color', 'red');
+            })
+
 
         });
 
