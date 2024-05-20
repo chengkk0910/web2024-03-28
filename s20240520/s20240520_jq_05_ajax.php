@@ -110,7 +110,7 @@ $data = [
                     console.log('res', res);
                 }
             });
-
+            
         });
         // jquery end
     </script>
