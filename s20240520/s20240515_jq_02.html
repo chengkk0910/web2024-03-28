@@ -58,8 +58,8 @@
     </header>
     <div class="container">
         <button type="button" id="blackBtn" class="myBtn" data-color="black" data-text="BLACK BTN">blackBtn</button>
-        <button type="button" id="blueBtn" class="myBtn">blueBtn</button>
-        <button type="button" id="redBtn" class="myBtn">redBtn</button>
+        <button type="button" id="blueBtn" class="myBtn" data-color="blue" data-text="BLUE BTN">blueBtn</button>
+        <button type="button" id="redBtn" class="myBtn" data-color="red" data-text="RED BTN">redBtn</button>
     </div>
 
     <div class="container">
@@ -80,6 +80,8 @@
             const blackBtn = $('#blackBtn');
             const blueBtn = $('#blueBtn');
             const redBtn = $('#redBtn');
+            const myBtn = $('.myBtn');
+
             const resultSpan = $('#resultSpan');
 
             console.log('blueBtn', blueBtn);
@@ -90,21 +92,23 @@
 
 
             // 2.action / method 
-            blackBtn.click(function () {
-                console.log('blackBtn ok');
-                resultSpan.text('BLACK');
-                // resultSpan.css('color', 'black');
+            myBtn.click(function () {
+                console.log('this', this);
+                console.log('$(this)', $(this));
+                let nowBtn = $(this);
 
-                let getDataColor = blackBtn.attr('data-color');
-                let getDataText = blackBtn.attr('data-text');
+                let getDataColor = nowBtn.attr('data-color');
+                let getDataText = nowBtn.attr('data-text');
                 console.log('getDataColor', getDataColor);
                 console.log('getDataText', getDataText);
                 resultSpan.css('color', getDataColor);
                 resultSpan.text(getDataText);
+
             })
 
 
         });
+        //jquery end
 
     </script>
 </body>
