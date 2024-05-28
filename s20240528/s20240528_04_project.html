@@ -10,14 +10,17 @@
     <style>
         .container-title {
             height: 20vh;
+            /* background-image: url('https://picsum.photos/id/26/1920/1080'); */
         }
 
         .container-1 {
             height: 95vh;
+            /* background-image: url('https://picsum.photos/id/190/1920/1080'); */
         }
 
         .container-2 {
             height: 95vh;
+            /* background-image: url('https://picsum.photos/id/191/1920/1080'); */
         }
 
         #topBtn {
@@ -33,20 +36,33 @@
 
 <body>
     <!-- title -->
-    <div class="container-fluid container-title bg-dark">
+    <div class="container-fluid container-title bg-dark text-center">
         <div class="row">
-            <div class="col">
-                <a href="#container1">link-1</a>
-                <a href="#container2">link-2</a>
+            <div class="col mt-5">
+                <a class="btn btn-secondary btn-lg me-5" href="#container1" role="button">link-1</a>
+                <a class="btn btn-secondary btn-lg" href="#container2" role="button">link-2</a>
             </div>
         </div>
     </div>
 
     <!-- title -->
     <div id="container1"></div>
-    <div class="container-fluid container-1 bg-primary">
-        <div class="row">
-            <div class="col">
+    <div class="container-fluid container-1">
+        <div class="row h-100">
+            <div class="col bg-warning">
+                <iframe class="w-100 h-100 p-5" src="https://www.youtube.com/embed/L0MK7qz13bU?si=y0NR9p4LHHfjgAiK"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            <div class="col bg-secondary">
+                <div class="w-100 h-100 p-5 mt-5 border border-info">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sequi totam nulla quos corporis hic
+                    accusamus modi culpa at minima! Laboriosam tempore provident incidunt, excepturi beatae laudantium
+                    accusantium magni. In consequatur quia totam exercitationem corporis debitis dolor tempore
+                    perspiciatis veniam nostrum a quasi, reiciendis ab quo nulla. At, assumenda ratione!
+                </div>
             </div>
         </div>
     </div>
@@ -54,14 +70,28 @@
     <!-- title -->
     <div id="container2"></div>
     <div class="container-fluid container-2 bg-danger">
-        <div class="row">
-            <div class="col">
+        <div class="row h-100">
+            <div class="col-4 bg-warning">
+                <div class="w-100 h-100 p-5 mt-5">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sequi totam nulla quos corporis hic
+                    accusamus modi culpa at minima! Laboriosam tempore provident incidunt, excepturi beatae laudantium
+                    accusantium magni. In consequatur quia totam exercitationem corporis debitis dolor tempore
+                    perspiciatis veniam nostrum a quasi, reiciendis ab quo nulla. At, assumenda ratione!
+                </div>
+
+            </div>
+            <div class="col-8 bg-secondary">
+                <iframe class="w-100 h-100 p-5"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.703506716216!2d121.41694067595641!3d25.04413413788237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1716866300021!5m2!1szh-TW!2stw"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
 
-    <a href="#" id="topBtn" class="position-fixed bg-dark bottom-0 end-0 mb-3 me-3">top</a>
-
+    <!-- <a href="#" class="position-fixed bg-dark bottom-0 end-0 mb-3 me-3">top</a> -->
+    <a id="topBtn" class="btn btn-danger btn-lg position-fixed bg-dark bottom-0 end-0 mb-3 me-3" href="#"
+        role="button">Top</a>
     <br><br><br><br><br>
 </body>
 
