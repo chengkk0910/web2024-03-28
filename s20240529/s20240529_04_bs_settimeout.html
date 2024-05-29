@@ -54,10 +54,11 @@
 
             goBtn.click(function (e) {
                 console.log('goBtn ok');
+                mySpin.show();
 
                 setTimeout(() => {
                     myResult.text('GO~');
-                    mySpin.show();
+                    mySpin.hide();
                     myResult.show();
                 }, 3000);
 
