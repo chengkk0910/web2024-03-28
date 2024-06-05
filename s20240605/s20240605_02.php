@@ -18,6 +18,18 @@ class Student
     public $mobile;
     public $num;
 
+
+    // public function __construct()
+    // {
+    //     echo "object 誕生";
+    // }
+
+    public function __construct($name)
+    {
+        echo "Hi $name ~ object 誕生";
+    }
+
+
     public function intro()
     {
         $result = "Hi , I'm $this->num $this->name - $this->mobile";
@@ -25,15 +37,15 @@ class Student
     }
 }
 
-$s1 = new Student();
-$s1->name = 'amy';
+$s1 = new Student('kai');
+// $s1->name = 'amy';
 $s1->mobile = '0911-111-111';
 $s1->num = 1;
 dd($s1);
 $s1->intro();
 
-$s2 = new Student();
-$s2->name = 'bob';
+$s2 = new Student('zoo');
+// $s2->name = 'bob';
 $s2->mobile = '0922-222-222';
 $s2->num = 2;
 dd($s2);
