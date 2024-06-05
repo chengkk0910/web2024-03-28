@@ -13,23 +13,68 @@
             height: 300px;
             background-color: lightblue;
             display: none;
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="box">
+        <div class="row">
+            <div class="col-6">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" id="fadeInBtn">fadeInBtn</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-danger" type="button" id="fadeOutBtn">fadeOutBtn</button>
+                </div>
+            </div>
+            <div class="mt-5 col-16 text-center">
+                <div class="box">
 
+                </div>
+            </div>
         </div>
+
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- js or jqery -->
     <script>
         $(document).ready(function () {
+            // 1.綁定
             const box = $('.box');
-            box.fadeIn(3000);
+            const fadeInBtn = $('#fadeInBtn');
+            const fadeOutBtn = $('#fadeOutBtn');
+
+            let boxFlag = false;
+
+
+            // 2.動作 
+            fadeInBtn.click(function () {
+                if (boxFlag) {
+                    return false;
+                }
+                console.log('fadeInBtn');
+                box.fadeIn(3000,function () {
+                    console.log('fadeIn ok');
+                    boxFlag = true;
+                });
+            });
+
+            fadeOutBtn.click(function () {
+                if (!boxFlag) {
+                    return false;
+                }
+                console.log('fadeOutBtn');
+                box.fadeOut(3000,function () {
+                    console.log('fadeOut ok');
+                    boxFlag = false;
+                });
+            });
         });
         // jquery end
 
