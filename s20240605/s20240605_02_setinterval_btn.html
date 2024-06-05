@@ -46,21 +46,27 @@
             const myText = $('.myText');
             const goBtn = $('#goBtn');
             const stopBtn = $('#stopBtn');
+            let goFlag = true;
             let myInterval;
 
             goBtn.click(function (e) {
-                console.log('goBtn ok');
+                if (!goFlag) {
+                    return false;
+                }
 
+                console.log('goBtn ok');
                 myInterval = setInterval(() => {
                     console.log('Hello');
                     console.log('JS');
                     myText.append('<br>  my content');
                 }, 1000);
+                goFlag = false;
             });
 
             stopBtn.click(function (e) {
                 console.log('stopBtn ok');
                 clearInterval(myInterval);
+                goFlag = true;
             });
 
             // myText.append('<br> my content ');
