@@ -65,7 +65,7 @@
                             data-bs-target="#myModalEdit">
                             Edit
                         </button>
-                        <button type="button" class="btn btn-danger">Del</button>
+                        <button type="button" class="btn btn-danger delBtn">Del</button>
 
                     </td>
                 </tr>
@@ -75,12 +75,7 @@
     </div>
 
 
-    <div class="container mt-3">
-        <h3>Extra Large Modal Example</h3>
-        <p>Click on the button to open the modal.</p>
 
-
-    </div>
 
     <!-- The Modal Add -->
     <div class="modal" id="myModal">
@@ -152,6 +147,25 @@
         </div>
     </div>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- js or jqery -->
+    <script>
+        $(document).ready(function () {
+            const delBtn = $('.delBtn');
+            delBtn.click(function () {
+                if (confirm("del?")) {
+                    console.log('刪除成功');
+                } else {
+                    console.log('取消刪除');
+                    return false;                
+                }
+                console.log('btn ok');
+            });
+        });
+        // jquery end
+
+    </script>
 </body>
 
 </html>
