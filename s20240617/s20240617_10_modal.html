@@ -154,11 +154,15 @@
         $(document).ready(function () {
             const delBtn = $('.delBtn');
             delBtn.click(function () {
+                // if(!confirm('Del ?')){
+                //     return false;
+                // }
+
                 if (confirm("del?")) {
                     console.log('刪除成功');
                 } else {
                     console.log('取消刪除');
-                    return false;                
+                    return false;
                 }
                 console.log('btn ok');
             });
