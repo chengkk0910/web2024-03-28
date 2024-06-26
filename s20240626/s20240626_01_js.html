@@ -13,15 +13,32 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- input -->
+                <button id="myBtn" type="button" class="btn btn-primary">time Btn</button>
+            </div>
+            <div class="col">
+                <!-- output -->
+                <span id="resultSpan">2024-06-26 ......</span>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- js or jqery -->
     <script>
-        $(document).ready(function () {
+        // 1.綁定 bind
+        const myBtn = document.getElementById('myBtn');
+        const resultSpan = document.getElementById('resultSpan');
+        console.log('myBtn', myBtn);
+        console.log('resultSpan', resultSpan);
 
+        // 2.事件 event 
+        myBtn.addEventListener('click', function () {
+            console.log('myBtn click ok');
+            resultSpan.innerText = 'Hello 55688';
+            // resultSpan.innerText('Hello 55688');
         });
-        // jquery end
-
     </script>
 </body>
 
