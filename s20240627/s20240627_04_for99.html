@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
                 <p id="myP">
@@ -37,14 +37,16 @@
         // for
         let result99 = '';
         for (let i = 1; i <= 9; i++) {
-            let tmpI = `i=${i} , j=`;
-            // console.log('tmpI', tmpI);
-            let tmpJ = '';
+            let tmpText = '';
             for (let j = 1; j <= 9; j++) {
-                tmpJ += `${j}`;
-                // console.log('tmpJ', tmpJ);
+                let iStr = i.toString().padStart(2, '0');
+                let jStr = j.toString().padStart(2, '0');
+                let ijStr = (i * j).toString().padStart(2, '0');
+                console.log('iStr', iStr);
+                tmpText += `${iStr} * ${jStr} = ${ijStr} &nbsp;&nbsp;&nbsp;`;
+                console.log('tmpText', tmpText);
             }
-            result99 = result99 + tmpI + tmpJ + "<br>";
+            result99 = result99 + tmpText + "<br>";
         }
 
         myP.innerHTML = result99;
