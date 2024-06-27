@@ -37,14 +37,14 @@
         // for
         let result99 = '';
         for (let i = 1; i <= 9; i++) {
-            let tmpIText = `i=${i} , j=`;
-            // console.log('tmpIText', tmpIText);
-            let tmpJText = '';
+            let tmpI = `i=${i} , j=`;
+            // console.log('tmpI', tmpI);
+            let tmpJ = '';
             for (let j = 1; j <= 9; j++) {
-                tmpJText += `${j}`;
-                console.log('tmpJText','tmpJText');
+                tmpJ += `${j}`;
+                // console.log('tmpJ', tmpJ);
             }
-            result99 = result99 + tmpIText + tmpJText + "<br>" ;
+            result99 = result99 + tmpI + tmpJ + "<br>";
         }
 
         myP.innerHTML = result99;
