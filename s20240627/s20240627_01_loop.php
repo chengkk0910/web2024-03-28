@@ -19,3 +19,41 @@ while ($i <= 10) {
 
 // do while
 $i = 1;
+
+
+// foreach
+$myArr = [1, 2, 3];
+$myArr = [
+    [
+        'sn' => 's1',
+        'name' => 'amy',
+        'mobile' => '0911'
+
+    ],[
+        'sn' => 's2',
+        'name' => 'bob',
+        'mobile' => '0911'
+
+    ],[
+        'sn' => 's2',
+        'name' => 'cat',
+        'mobile' => '0911'
+
+    ],
+
+];
+foreach ($variable as $key => $value) {
+    echo $value['s1'];
+    // 1 2 3
+}
+
+
+// php
+// index array
+$indexArr = [1,2,3];
+// assoc array
+$assocArr = [
+    's1'=>'amy',
+    's2'=>'bob',
+    's3'=>'cat'
+];
