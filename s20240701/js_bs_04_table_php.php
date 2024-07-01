@@ -1,5 +1,36 @@
-<?php 
-    $data = [];
+<?php
+function dd($data)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
+
+
+// $data = sql -> select fetchAll
+$data = [
+    [
+        'id' => 1,
+        'name' => '台北店',
+        'mobile' => '0911-111-111',
+        'price' => '10000'
+    ],
+    [
+        'id' => 2,
+        'name' => '台中店',
+        'mobile' => '0922-222-222',
+        'price' => '50000'
+    ],
+    [
+        'id' => 3,
+        'name' => '高雄店',
+        'mobile' => '0933-333-333',
+        'price' => '100000'
+    ],
+];
+
+dd($data);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,26 +62,15 @@
             </thead>
             <tbody>
                 <!-- foreach $data php -->
-                <tr>
-                    <td>1</td>
-                    <td>台北店</td>
-                    <td>0911-111-111</td>
-                    <td>10000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>台中店</td>
-                    <td>0922-222-222</td>
-                    <td>50000</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>高雄店</td>
-                    <td>0933-333-333</td>
-                    <td>100000</td>
-                </tr>
-                
-                
+                <?php foreach ($data as $key => $value) : ?>
+                    <tr>
+                        <td><?= $value['id'] ?></td>
+                        <td><?= $value['name'] ?></td>
+                        <td><?= $value['mobile'] ?></td>
+                        <td><?= $value['price'] ?></td>
+
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
