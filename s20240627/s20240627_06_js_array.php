@@ -49,6 +49,15 @@
         };
         console.log('myObject', myObject);
 
+
+        // 北中南
+        // 1.規劃　object
+        // 北 0911 台北市　１００００
+        // 中 0922 台中　　５００００
+        // 南 0933 高雄　　１０００００
+        
+        // 2.obj to bs table 
+
     </script>
 </body>
 
