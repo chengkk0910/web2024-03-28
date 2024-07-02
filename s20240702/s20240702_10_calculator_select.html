@@ -26,7 +26,14 @@
             </div>
             <div class="col-4">
                 <label for="">Opt</label>
-                <input type="text" name="" id="opt" placeholder="+?">
+                <!-- <input type="text" name="" id="opt" placeholder="+?"> -->
+
+                <select name="" id="opt">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
             </div>
             <div class="col-12 mt-5">
                 <div class="d-grid gap-2">
@@ -41,7 +48,7 @@
 
     <script>
         // 1.綁定
-        const num1 = document.getElementById('num1');
+        const num1 = document.querySelector('num1');
         const num2 = document.getElementById('num2');
         const opt = document.getElementById('opt');
         const myBtn = document.getElementById('myBtn');
@@ -57,7 +64,7 @@
             let num1Value = Number(num1.value);
             let num2Value = parseInt(num2.value);
             let optValue = opt.value;
-            
+
             let result = 0;
             switch (optValue) {
                 case '+':
