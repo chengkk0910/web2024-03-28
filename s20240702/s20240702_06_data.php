@@ -48,5 +48,3 @@ foreach ($newData as $key => $value) {
 // dd($data);
 
 echo json_encode($newData);
-
-?>
