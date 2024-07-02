@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody id="myTbody">
-               
+
 
             </tbody>
         </table>
@@ -62,20 +62,23 @@
             },
         ];
 
-        data.forEach(function (value, key) {
-            console.log('key', key);
-            console.log('value', value);
+        let newData = data;
+
+        newData.forEach(function (value, key) {
             let tmpSum = 0;
             let tmpAvg = 0;
             tmpSum = value['chinese'] + value['english'] + value['math'];
             tmpAvg = tmpSum / 3;
-            // 四捨五入 小數第二位
-            // 1.toFixed
-            // tmpAvg = tmpAvg.toFixed(2);
+            tmpAvg = tmpAvg.toFixed(2);
 
-            // 2.math.round
-            tmpAvg = Math.round(tmpAvg * 100) / 100;
+            newData[key]['sum'] = tmpSum;
+            newData[key]['avg'] = tmpAvg;
+        });
 
+        console.log('data', data);
+        console.log('newData', newData);
+
+        newData.forEach(function (value, key) {
             resultText += `
                 <tr>
                     <td>${value['id']}</td>
@@ -83,11 +86,10 @@
                     <td>${value['chinese']}</td>
                     <td>${value['english']}</td>
                     <td>${value['math']}</td>
-                    <td>${tmpSum}</td>
-                    <td>${tmpAvg}</td>
+                    <td>${value['sum']}</td>
+                    <td>${value['avg']}</td>
                 </tr>
             `;
-
         });
         myTbody.innerHTML = resultText;
 
