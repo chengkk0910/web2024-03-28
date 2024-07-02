@@ -41,7 +41,7 @@
     <!-- js or jqery -->
     <script>
         $(document).ready(function () {
-            const myTbody = document.getElementById('myTbody');
+            const myTbody = $('#myTbody');
             console.log('myTbody', myTbody);
             let resultText = "";
             url = './s20240702_06_data.php';
@@ -53,10 +53,8 @@
                 success: function (res) {
                     console.log('res', res);
                     let data = res;
-                    data.forEach(function (value, key) {
-                        console.log('key', key);
-                        console.log('value', value);
-                        // if(xx fu == ok)                         
+                    let resultText = "";
+                    $.each(data, function (key, value) {
                         resultText += `
                             <tr>
                                 <td>${value['id']}</td>
@@ -68,10 +66,8 @@
                                 <td>${value['avg']}</td>
                             </tr>
                          `;
-
-
                     });
-                    myTbody.innerHTML = resultText;
+                    myTbody.html(resultText);
                 }
             });
 
