@@ -66,8 +66,14 @@
                     </td>
                     <td>50</td>
                     <td>
-                        <input id="item1Count" class="form-control ms-3" type="number" name="" id="" value="1"
-                            data-price="50" min="0" max="10">
+                        <div class="d-flex">
+                            <button id="cutBtn" type="button" class="btn btn-danger"><i
+                                    class="fa-solid fa-minus"></i></button>
+                            <input id="item1Count" class="form-control ms-3" type="number" name="" id="" value="1"
+                                data-price="50" min="0" max="10">
+                            <button id="plusBtn" type="button" class="btn btn-success ms-3"><i
+                                    class="fa-solid fa-plus"></i></button>
+                        </div>
                     </td>
                     <td>
                         <span id="item1Total">
@@ -90,7 +96,17 @@
     </div>
 
     <script>
-
+        function calTotalFun() {
+            console.log('change ok');
+            let getDataPrice = Number(item1Count.getAttribute('data-price'));
+            let getNumber = Number(item1Count.value);
+            console.log('getDataPrice', getDataPrice);
+            console.log('getDataPrice typeof', typeof (getDataPrice));
+            console.log('getNumber', getNumber);
+            console.log('getNumber typeof', typeof (getNumber));
+            let tmpTotal = getDataPrice * getNumber;
+            item1Total.innerText = tmpTotal;
+        }
 
         orders = [
             {
@@ -122,17 +138,33 @@
         const cutBtn = document.getElementById('cutBtn');
 
         item1Count.addEventListener('change', function () {
-            console.log('change ok');
-            let getDataPrice = Number(this.getAttribute('data-price'));
-            let getNumber = Number(this.value);
-            console.log('getDataPrice', getDataPrice);
-            console.log('getDataPrice typeof', typeof (getDataPrice));
-            console.log('getNumber', getNumber);
-            console.log('getNumber typeof', typeof (getNumber));
-            let tmpTotal = getDataPrice * getNumber;
-            item1Total.innerText = tmpTotal;
+            calTotalFun();
         });
 
+        plusBtn.addEventListener('click', function () {
+            console.log('plusBtn ok');
+            let getItemCountValue = item1Count.value;
+            if (getItemCountValue >= 10) {
+                return false;
+            }
+            getItemCountValue++;
+            item1Count.value = getItemCountValue;
+
+            calTotalFun();
+        });
+
+
+        cutBtn.addEventListener('click', function () {
+            console.log('plusBtn ok');
+            let getItemCountValue = item1Count.value;
+            if (getItemCountValue <= 0) {
+                return false;
+            }
+            getItemCountValue--;
+            item1Count.value = getItemCountValue;
+
+            calTotalFun();
+        });
         console.log('orders', orders);
     </script>
 </body>
