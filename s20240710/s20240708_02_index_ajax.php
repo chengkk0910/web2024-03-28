@@ -45,11 +45,12 @@
                 // data: "data",
                 dataType: "json",
                 success: function(res) {
-                    let data = res;
+                    console.log('res', res);
+                    let data = res.data;
                     // console.log('data', data);
                     let result = '';
                     // jq each
-                    $.each(res, function(key, value) {
+                    $.each(data, function(key, value) {
                         console.log('value', value);
                         result += `
                             <tr>

@@ -28,4 +28,13 @@ foreach ($data as $key => $value) {
 // $getJson =  json_encode($newData);
 // echo gettype($getJson) . "<br>";
 
-echo json_encode($newData);
+// echo json_encode($newData);
+
+
+$msg = [
+    'data' => $newData,
+    'result' => 'ok',
+    'desc' => '操作說明......'
+];
+
+echo json_encode($msg);
