@@ -16,12 +16,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $conn->prepare("SELECT * FROM students");
 $stmt->execute();
 
-// set the resulting array to associative
-// $data = $stmt->fetchAll();
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// $data = $stmt->fetchAll(PDO::FETCH_NUM);
-// $data = $stmt->fetchAll(PDO::FETCH_BOTH);
-// dd($data);
 
 $newData = $data;
 
@@ -30,3 +25,7 @@ foreach ($data as $key => $value) {
 }
 
 // dd($newData);
+// $getJson =  json_encode($newData);
+// echo gettype($getJson) . "<br>";
+
+echo json_encode($newData);
