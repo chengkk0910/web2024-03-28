@@ -25,13 +25,8 @@
                     <th>rank</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>name</td>
-                    <td>mobile</td>
-                    <td>rank</td>
-                </tr>
+            <tbody id="myTbody">
+
             </tbody>
         </table>
     </div>
@@ -41,20 +36,37 @@
     <!-- js or jqery -->
     <script>
         $(document).ready(function() {
-            url = './data_ajax.php';
+            const myTbody = $('#myTbody');
+            let url = './data_ajax.php';
+
             $.ajax({
                 type: "get",
                 url: url,
                 // data: "data",
                 dataType: "json",
                 success: function(res) {
-                    // console.log('res', res);
-                    // let data = JSON.parse(res);
-                    
                     let data = res;
-                    console.log('data', data);
+                    // console.log('data', data);
+                    let result = '';
+                    // jq each
+                    $.each(res, function(key, value) {
+                        console.log('value', value);
+                        result += `
+                            <tr>
+                                <td>${value.id}</td>
+                                <td>${value.name}</td>
+                                <td>${value.mobile}</td>
+                                <td>${value.rank}</td>
+                            </tr>
+                        `;
+                    });
+                    console.log('result', result);
+                    myTbody.html(result);
+
                 }
             });
+
+
 
         });
         // jquery end
