@@ -21,22 +21,23 @@
         </h3>
     </div>
     <div class="container mt-3">
-        
-        <div class="row">
-            <div class="col-12 mt-3">
-                <label for="">name</label>
-                <input type="text" class="form-control" name="" id="">
-            </div>
-            <div class="col-12 mt-3">
-                <label for="">mobile</label>
-                <input type="text" class="form-control" name="" id="">
-            </div>
-            <div class="col-12 mt-3">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Button</button>
+        <form action="../../api/student/store.php" method="get">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <label for="">name</label>
+                    <input type="text" class="form-control" name="name" id="">
+                </div>
+                <div class="col-12 mt-3">
+                    <label for="">mobile</label>
+                    <input type="text" class="form-control" name="mobile" id="">
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="submit">Button</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
 
@@ -46,19 +47,17 @@
 
     <!-- js or jqery -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $.ajax({
                 type: "get",
                 url: "url",
                 data: "data",
                 dataType: "json",
-                success: function (response) {
-                }
+                success: function(response) {}
             });
 
         });
         // jquery end
-
     </script>
 </body>
 

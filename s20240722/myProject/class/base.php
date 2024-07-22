@@ -60,6 +60,31 @@ class DB
         // dd($tmp);
         return $tmp;
     }
+
+    // add
+    public function store($data)
+    {
+        $data['name'] = $data['name'] . '_Hello';
+
+        $sql = "
+        INSERT INTO
+            `students` (`id`, `name`, `mobile`)
+        VALUES
+            (NULL, '{$data['name']}', '{$data['mobile']}');
+        ";
+        // dd($sql);
+
+        // Array
+        // (
+        //     [name] => aaa
+        //     [mobile] => 123
+        // )
+
+    
+        $this->conn->query($sql);
+        header('Location: http://localhost');
+        exit();
+    }
 }
 
 

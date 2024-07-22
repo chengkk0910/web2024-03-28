@@ -70,13 +70,13 @@ $data = $students->getAllSetRank();
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
         <div class="text-end">
             <!-- <button type="button" class="btn btn-success">Add</button> -->
-            <a class="btn btn-success" href="./create.html">Add</a>
+            <a class="btn btn-success" href="./create.php">Add</a>
         </div>
         <table class="table table-bordered mt-3 text-center">
             <thead>
                 <tr>
                     <th width="10%">id</th>
-                    <th width="10%">name</th>
+                    <th width="20%">name</th>
                     <th width="20%">mobile</th>
                     <th width="10%">Rank</th>
                     <th class="text-start">
