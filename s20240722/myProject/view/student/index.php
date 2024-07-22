@@ -3,6 +3,8 @@ include "../../class/base.php";
 
 $students = new DB('students');
 // $data = $students->getAll();
+// $data = $students->setRank();
+// $data = $students->getAllSetRank();
 $data = $students->getAllSetRank();
 
 // $appleDB = new DB('students');

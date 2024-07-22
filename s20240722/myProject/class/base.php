@@ -19,7 +19,7 @@ class DB
         echo "Hello new $table";
     }
 
-    public function getAll()
+    protected function getAll()
     {
         $sql = "SELECT * FROM students";
         $data =  $this->conn->query($sql)->fetch_all(MYSQLI_ASSOC);
@@ -48,7 +48,8 @@ class DB
         foreach ($data as $key => $value) {
             $tmp[$key]['rank'] = 1;
         }
-        dd($tmp);
+        // dd($tmp);
+        return $tmp;
         
     }
 }
