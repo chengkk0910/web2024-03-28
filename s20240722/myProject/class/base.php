@@ -22,7 +22,7 @@ class DB
     public function getAll()
     {
         $sql = "SELECT * FROM students";
-        $data =  $this->conn->query($sql)->fetch_all();
+        $data =  $this->conn->query($sql)->fetch_all(MYSQLI_ASSOC);
         // dd($data);
         return $data;
     }
