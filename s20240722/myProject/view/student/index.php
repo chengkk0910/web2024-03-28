@@ -1,9 +1,7 @@
 <?php
-// include "../../class/base.php";
+include "../../class/base.php";
 
-include '../../class/db.php';
-include '../../class/studetns.php';
-$students = new Student('students');
+$students = new DB('students');
 $data = $students->getAll();
 dd($data);
 
