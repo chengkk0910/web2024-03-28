@@ -29,7 +29,9 @@ $data = [
 ];
 
 
-dd($data);
+// dd($data);
+// dd($data[0]);
+// dd($data[0]['name']);
 
 
 ?>
@@ -69,15 +71,31 @@ dd($data);
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>amy</td>
-                    <td>0911-111-111</td>
-                    <td class="text-start">
-                        <button type="button" class="btn btn-warning">Edit</button>
-                        <button type="button" class="btn btn-danger">Del</button>
-                    </td>
-                </tr>
+                <?php foreach ($data as $key => $value) : ?>
+                    <?php
+                    // dd($key);
+                    // dd($value);
+
+                    //                     Array
+                    // (
+                    //     [id] => 1
+                    //     [name] => amy
+                    //     [mobile] => 0911-111-11
+                    // )
+                    ?>
+                    <tr>
+                        <td><?= $value['id']; ?></td>
+                        <td><?= $value['name']; ?></td>
+                        <td><?= $value['mobile']; ?></td>
+                        <td class="text-start">
+                            <button type="button" class="btn btn-warning">Edit</button>
+                            <button type="button" class="btn btn-danger">Del</button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+
+
+
 
             </tbody>
         </table>
