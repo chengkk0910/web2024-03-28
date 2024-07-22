@@ -1,32 +1,44 @@
 <?php
-function dd($data)
-{
-    echo "<pre>";
-    print_r($data);
-    echo "</pre>";
-}
+// include "../../class/base.php";
+
+include '../../class/db.php';
+include '../../class/studetns.php';
+$students = new Student('students');
+$data = $students->getAll();
+dd($data);
+
+// $appleDB = new DB('students');
+// $data = $appleDB->getAll();
+// dd($data);
+
+// function dd($data)
+// {
+//     echo "<pre>";
+//     print_r($data);
+//     echo "</pre>";
+// }
 
 // 假資料
-$data = [
-    [
-        'id' => 1,
-        'name' => 'amy',
-        'mobile' => '0911-111-11'
+// $data = [
+//     [
+//         'id' => 1,
+//         'name' => 'amy',
+//         'mobile' => '0911-111-11'
 
-    ],
-    [
-        'id' => 2,
-        'name' => 'bob',
-        'mobile' => '0922-222-222'
+//     ],
+//     [
+//         'id' => 2,
+//         'name' => 'bob',
+//         'mobile' => '0922-222-222'
 
-    ],
-    [
-        'id' => 3,
-        'name' => 'cat',
-        'mobile' => '0933-333-333'
+//     ],
+//     [
+//         'id' => 3,
+//         'name' => 'cat',
+//         'mobile' => '0933-333-333'
 
-    ],
-];
+//     ],
+// ];
 
 
 // dd($data);
@@ -93,6 +105,8 @@ $data = [
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
+
 
 
 
