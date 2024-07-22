@@ -1,3 +1,39 @@
+<?php
+function dd($data)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
+
+// 假資料
+$data = [
+    [
+        'id' => 1,
+        'name' => 'amy',
+        'mobile' => '0911-111-11'
+
+    ],
+    [
+        'id' => 2,
+        'name' => 'bob',
+        'mobile' => '0922-222-222'
+
+    ],
+    [
+        'id' => 3,
+        'name' => 'cat',
+        'mobile' => '0933-333-333'
+
+    ],
+];
+
+
+dd($data);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,24 +78,7 @@
                         <button type="button" class="btn btn-danger">Del</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>bob</td>
-                    <td>0922-222-222</td>
-                    <td class="text-start">
-                        <button type="button" class="btn btn-warning">Edit</button>
-                        <button type="button" class="btn btn-danger">Del</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>cat</td>
-                    <td>0933-333-333</td>
-                    <td class="text-start">
-                        <button type="button" class="btn btn-warning">Edit</button>
-                        <button type="button" class="btn btn-danger">Del</button>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
@@ -71,19 +90,17 @@
 
     <!-- js or jqery -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $.ajax({
                 type: "get",
                 url: "url",
                 data: "data",
                 dataType: "json",
-                success: function (response) {
-                }
+                success: function(response) {}
             });
 
         });
         // jquery end
-
     </script>
 </body>
 
