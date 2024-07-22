@@ -2,8 +2,8 @@
 include "../../class/base.php";
 
 $students = new DB('students');
-$data = $students->getAll();
-// dd($data);
+// $data = $students->getAll();
+$data = $students->getAllSetRank();
 
 // $appleDB = new DB('students');
 // $data = $appleDB->getAll();
@@ -75,6 +75,7 @@ $data = $students->getAll();
                     <th width="10%">id</th>
                     <th width="10%">name</th>
                     <th width="20%">mobile</th>
+                    <th width="10%">Rank</th>
                     <th class="text-start">
                         opreate
                     </th>
@@ -97,6 +98,7 @@ $data = $students->getAll();
                         <td><?= $value['id']; ?></td>
                         <td><?= $value['name']; ?></td>
                         <td><?= $value['mobile']; ?></td>
+                        <td><?= $value['rank']; ?></td>
                         <td class="text-start">
                             <button type="button" class="btn btn-warning">Edit</button>
                             <button type="button" class="btn btn-danger">Del</button>
