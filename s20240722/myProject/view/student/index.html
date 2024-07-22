@@ -18,12 +18,18 @@
     <div class="container mt-3">
         <h2>Students List</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
-        <table class="table table-bordered">
+        <div class="text-end">
+            <button type="button" class="btn btn-success">Add</button>
+        </div>
+        <table class="table table-bordered mt-3 text-center">
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>mobile</th>
+                    <th width="10%">id</th>
+                    <th width="10%">name</th>
+                    <th width="20%">mobile</th>
+                    <th class="text-start">
+                        opreate
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -31,17 +37,29 @@
                     <td>1</td>
                     <td>amy</td>
                     <td>0911-111-111</td>
-                </tr>      
+                    <td class="text-start">
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Del</button>
+                    </td>
+                </tr>
                 <tr>
                     <td>2</td>
                     <td>bob</td>
                     <td>0922-222-222</td>
-                </tr>       
+                    <td class="text-start">
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Del</button>
+                    </td>
+                </tr>
                 <tr>
                     <td>3</td>
                     <td>cat</td>
                     <td>0933-333-333</td>
-                </tr>                
+                    <td class="text-start">
+                        <button type="button" class="btn btn-warning">Edit</button>
+                        <button type="button" class="btn btn-danger">Del</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
