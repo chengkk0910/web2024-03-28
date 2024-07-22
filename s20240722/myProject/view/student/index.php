@@ -3,7 +3,7 @@ include "../../class/base.php";
 
 $students = new DB('students');
 $data = $students->getAll();
-dd($data);
+// dd($data);
 
 // $appleDB = new DB('students');
 // $data = $appleDB->getAll();
