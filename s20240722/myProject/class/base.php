@@ -31,10 +31,14 @@ class DB
     {
         $sql = "SELECT * FROM students";
         $data =  $this->conn->query($sql)->fetch_all(MYSQLI_ASSOC);
-        $data = $this->getAll();
+        // $data = $this->getAll();
         $tmp = $data;
         foreach ($data as $key => $value) {
-            $tmp[$key]['rank'] = 1;
+            if ($value['id'] >= 5) {
+                $tmp[$key]['rank'] = 2;
+            } else {
+                $tmp[$key]['rank'] = 1;
+            }
         }
         // dd($tmp);
 
@@ -42,15 +46,19 @@ class DB
     }
 
 
-    public function setRank(){
+    public function setRank()
+    {
         $data = $this->getAll();
         $tmp = $data;
         foreach ($data as $key => $value) {
-            $tmp[$key]['rank'] = 1;
+            if ($value['id'] >= 5) {
+                $tmp[$key]['rank'] = 2;
+            } else {
+                $tmp[$key]['rank'] = 1;
+            }
         }
         // dd($tmp);
         return $tmp;
-        
     }
 }
 
