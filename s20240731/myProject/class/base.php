@@ -48,7 +48,7 @@ class DB
     {
         $sql = "SELECT * FROM students";
         $data =  $this->conn->query($sql)->fetchAll(2);
-        dd($data);
+        // dd($data);
         // $data = $this->getAll();
         $tmp = $data;
         foreach ($data as $key => $value) {
@@ -100,8 +100,8 @@ class DB
 
 
         $this->conn->exec($sql);
-        header('Location: http://localhost');
-        exit();
+        // header('Location: http://localhost');
+        // exit();
     }
 
     // add
