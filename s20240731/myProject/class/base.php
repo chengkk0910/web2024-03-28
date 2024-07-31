@@ -63,6 +63,24 @@ class DB
         return $tmp;
     }
 
+    public function getByID($id)
+    {
+
+        $sql = "SELECT * FROM students WHERE id = $id";
+        $data =  $this->conn->query($sql)->fetch(2);
+        // dd($data);
+        // $data = $this->getAll();
+        $tmp = $data;
+        if ($data['id'] >= 5) {
+            $tmp['rank'] = 2;
+        } else {
+            $tmp['rank'] = 1;
+        }
+        // dd($tmp);
+
+        return $tmp;
+    }
+
 
     public function setRank()
     {
@@ -82,7 +100,7 @@ class DB
     // add
     public function store($data)
     {
-        $data['name'] = $data['name'] . '_Hello';
+        $data['name'] = $data['name'];
 
         $sql = "
         INSERT INTO
@@ -102,6 +120,37 @@ class DB
         $this->conn->exec($sql);
         // header('Location: http://localhost');
         // exit();
+    }
+
+    // update
+    public function update($data)
+    {
+        // dd('hello update');
+        // dd($data);
+        // Array
+        // (
+        //     [name] => cat
+        //     [mobile] => 0933-333-333
+        //     [id] => 3
+        // )
+
+        $id = $data['id'];
+
+
+        $sql = "UPDATE
+                    `students`
+                SET
+                    `name` = '{$data['name']}',
+                    `mobile` = '{$data['mobile']}'
+                WHERE
+                    `students`.`id` = $id;";
+
+        // dd($sql);
+
+
+        $this->conn->exec($sql);
+        header('Location: http://localhost');
+        exit();
     }
 
     // add

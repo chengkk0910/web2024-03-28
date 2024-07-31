@@ -21,7 +21,7 @@
         </h3>
     </div>
     <div class="container mt-3">
-        <form action="../../api/student/store.php" method="get" id="myForm">
+        <form action="../../api/student/store.php" method="get" id="myForm" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12 mt-3">
                     <label for="">name</label>
@@ -58,39 +58,43 @@
                 e.preventDefault();
                 console.log('submit ok');
 
+                var formData = new FormData();
+                formData.append('file', $('#file')[0].files[0]);
+                console.log('formData', formData);
+
                 // let data = $(this).serialize();
                 let data = $(this).serializeArray();
                 // console.log('data', data);
                 // console.log('typeof(data)', typeof(data));
 
                 // 方法一 xxx
-                // let tmpObj = {
-                //     'name' : 'address',
-                //     'mobile' : 'taipei'
-                // };
-                // data.push(tmpObj);
+                let tmpObj = {
+                    'name': 'address',
+                    'mobile': 'taipei'
+                };
+                data.push(tmpObj);
                 // console.log(data);;
 
                 // 方法二
                 // html form hidden
-                console.log('data',data);
+                console.log('data', data);
 
                 // ajax
                 url = "../../api/student/store.php";
-                // $.ajax({
-                //     type: "get",
-                //     url: url,
-                //     data: data,
-                //     dataType: "json",
-                //     success: function(res) {
-                //         console.log('res', res);
-                //         let result = res.msg;
-                //         if(result = "ok"){
-                //             console.log('ajax insert ok');
-                //             // window.location.href = "http://localhost";
-                //         }
-                //     }
-                // });
+                $.ajax({
+                    type: "get",
+                    url: url,
+                    data: formData,
+                    dataType: "json",
+                    success: function(res) {
+                        console.log('res', res);
+                        let result = res.msg;
+                        if(result = "ok"){
+                            console.log('ajax insert ok');
+                            // window.location.href = "http://localhost";
+                        }
+                    }
+                });
                 // ajax end
 
             });

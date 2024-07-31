@@ -1,3 +1,12 @@
+<?php
+include "../../class/base.php";
+
+$students = new DB('students');
+$id = $_GET['id'];
+$data = $students->getByID($id);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,27 +30,28 @@
         </h3>
     </div>
     <div class="container mt-3">
-        
-        <div class="row">
-            <div class="col-12 mt-3">
-                <label for="">ID ==> </label>
-                <!-- <input type="text" class="form-control" name="" value="1" > -->
-                 <span>1</span>
-            </div>
-            <div class="col-12 mt-3">
-                <label for="">name</label>
-                <input type="text" class="form-control" name="" id="" value="amy">
-            </div>
-            <div class="col-12 mt-3">
-                <label for="">mobile</label>
-                <input type="text" class="form-control" name="" id="" value="0911-111-111">
-            </div>
-            <div class="col-12 mt-3">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Button</button>
+        <form action="../../api/student/update.php" method="get" id="myForm" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="col-12 mt-3 text-primary">
+                    <label for="">id = <?= $data['id'] ?></label>
+                </div>
+                <div class="col-12 mt-3">
+                    <label for="">name</label>
+                    <input type="text" class="form-control" name="name" id="" value="<?= $data['name'] ?>">
+                </div>
+                <div class="col-12 mt-3">
+                    <label for="">mobile</label>
+                    <input type="text" class="form-control" name="mobile" id="" value="<?= $data['mobile'] ?>">
+                </div>
+                <div class="col-12 mt-3">
+                    <input type="hidden" class="form-control" name="id" id="" value="<?= $data['id'] ?>">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="submit">Button</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
 
@@ -51,19 +61,11 @@
 
     <!-- js or jqery -->
     <script>
-        $(document).ready(function () {
-            $.ajax({
-                type: "get",
-                url: "url",
-                data: "data",
-                dataType: "json",
-                success: function (response) {
-                }
-            });
+        $(document).ready(function() {
+
 
         });
         // jquery end
-
     </script>
 </body>
 

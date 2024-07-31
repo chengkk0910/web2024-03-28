@@ -42,3 +42,10 @@ VALUES
     (NULL, 'cat', '0933-333-333'),
     (NULL, 'dog', '0944-444-444');
 
+-- 單筆修改
+UPDATE
+    `students`
+SET
+    `name` = 'cat123'
+WHERE
+    `students`.`id` = 3;
