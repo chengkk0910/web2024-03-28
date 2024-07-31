@@ -58,10 +58,6 @@
                 e.preventDefault();
                 console.log('submit ok');
 
-                var formData = new FormData();
-                formData.append('file', $('#file')[0].files[0]);
-                console.log('formData', formData);
-
                 // let data = $(this).serialize();
                 let data = $(this).serializeArray();
                 // console.log('data', data);
@@ -84,14 +80,14 @@
                 $.ajax({
                     type: "get",
                     url: url,
-                    data: formData,
+                    data: data,
                     dataType: "json",
                     success: function(res) {
                         console.log('res', res);
                         let result = res.msg;
-                        if(result = "ok"){
+                        if (result = "ok") {
                             console.log('ajax insert ok');
-                            // window.location.href = "http://localhost";
+                            window.location.href = "http://localhost";
                         }
                     }
                 });

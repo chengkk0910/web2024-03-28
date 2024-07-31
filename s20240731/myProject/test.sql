@@ -49,3 +49,7 @@ SET
     `name` = 'cat123'
 WHERE
     `students`.`id` = 3;
+
+
+-- 單筆刪除
+DELETE FROM students WHERE `students`.`id` = 4

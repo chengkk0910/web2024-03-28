@@ -153,6 +153,15 @@ class DB
         exit();
     }
 
+    // del
+    public function del($id)
+    {
+        $sql = "DELETE FROM students WHERE `students`.`id` = $id";
+        $this->conn->exec($sql);
+        header('Location: http://localhost');
+        exit();
+    }
+
     // add
     public function rollbackFun()
     {
