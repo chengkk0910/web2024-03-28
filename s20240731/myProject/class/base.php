@@ -80,7 +80,25 @@ class DB
         //     [mobile] => 123
         // )
 
-    
+
+        $this->conn->query($sql);
+        header('Location: http://localhost');
+        exit();
+    }
+
+    // add
+    public function rollbackFun()
+    {
+        $sql = "TRUNCATE TABLE `db0722`.`students`";
+        $this->conn->query($sql);
+
+        $sql = "INSERT INTO
+                    `students` (`id`, `name`, `mobile`)
+                VALUES
+                    (NULL, 'amy', '0911-111-111'),
+                    (NULL, 'bob', '0922-222-222'),
+                    (NULL, 'cat', '0933-333-333'),
+                    (NULL, 'dog', '0944-444-444');";
         $this->conn->query($sql);
         header('Location: http://localhost');
         exit();
