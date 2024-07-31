@@ -121,8 +121,8 @@ class DB
         // $data = $this->conn->query($sql);
         // dd($data);
 
-        // header('Location: http://localhost');
-        // exit();
+        header('Location: http://localhost');
+        exit();
     }
 }
 
