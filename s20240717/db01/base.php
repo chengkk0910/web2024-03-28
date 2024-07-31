@@ -31,6 +31,7 @@ class DB
 
     public function store($data)
     {
+
         // dd($data);
         //         Array
         // (
@@ -40,7 +41,7 @@ class DB
         $sql = "INSERT INTO `students` (`id`, `name`, `mobile`) VALUES (NULL, '{$data['name']}' , '{$data['mobile']}');";
         // dd($sql);
         // $sql = "INSERT INTO `students` (`id`, `name`, `mobile`) VALUES (NULL, 'dat', '444');";
-        $this->pdo->exec($sql); 
+        $this->pdo->exec($sql);
     }
 
     // public function update(){
@@ -49,7 +50,8 @@ class DB
     // }
 
 
-    public function update($data){
+    public function update($data)
+    {
         dd($data);
         $id = $data['id'];
         // dd($id);
@@ -57,11 +59,11 @@ class DB
         $this->pdo->exec($sql);
     }
 
-    public function del($id){
+    public function del($id)
+    {
         $sql = "DELETE FROM students WHERE `students`.`id` = $id";
-        $this->pdo->exec($sql); 
+        $this->pdo->exec($sql);
     }
-  
 }
 
 

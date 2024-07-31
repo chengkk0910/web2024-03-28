@@ -7,6 +7,8 @@ class DB
     protected $table;
     protected $conn;
 
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db15";
+
     public function __construct($table)
     {
         $servername = "localhost";
@@ -14,15 +16,30 @@ class DB
         $password = "";
         $dbname = "db0722";
 
-        $this->conn = new mysqli($servername, $username, $password, $dbname);
         $this->table = $table;
-        // echo "Hello new $table";
+        $this->conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     }
+
+
+    // public function __construct($table)
+    // {
+    //     $servername = "localhost";
+    //     $username = "root";
+    //     $password = "";
+    //     $dbname = "db0722";
+
+
+
+    //     $this->conn = new PDO($servername, $username, $password, $dbname);
+    //     $this->table = $table;
+    //     // echo "Hello new $table";
+    // }
 
     protected function getAll()
     {
         $sql = "SELECT * FROM students";
-        $data =  $this->conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+        // $data =  $this->conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+        $data =  $this->conn->query($sql)->fetchAll(2);
         // dd($data);
         return $data;
     }
@@ -30,7 +47,8 @@ class DB
     public function getAllSetRank()
     {
         $sql = "SELECT * FROM students";
-        $data =  $this->conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+        $data =  $this->conn->query($sql)->fetchAll(2);
+        dd($data);
         // $data = $this->getAll();
         $tmp = $data;
         foreach ($data as $key => $value) {
@@ -81,7 +99,7 @@ class DB
         // )
 
 
-        $this->conn->query($sql);
+        $this->conn->exec($sql);
         header('Location: http://localhost');
         exit();
     }
@@ -99,9 +117,12 @@ class DB
                     (NULL, 'bob', '0922-222-222'),
                     (NULL, 'cat', '0933-333-333'),
                     (NULL, 'dog', '0944-444-444');";
-        $this->conn->query($sql);
-        header('Location: http://localhost');
-        exit();
+        $data = $this->conn->exec($sql);
+        // $data = $this->conn->query($sql);
+        dd($data);
+
+        // header('Location: http://localhost');
+        // exit();
     }
 }
 

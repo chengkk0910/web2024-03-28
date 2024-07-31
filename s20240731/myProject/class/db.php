@@ -12,7 +12,7 @@ class DB
         $password = "";
         $dbname = "db0722";
 
-        $this->conn = new mysqli($servername, $username, $password, $dbname);
+        $this->conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     }
 }
 
