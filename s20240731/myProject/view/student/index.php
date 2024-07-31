@@ -70,7 +70,7 @@ $data = $students->getAllSetRank();
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
         <div class="text-end">
             <!-- <button type="button" class="btn btn-success">Add</button> -->
-            <a class="btn btn-danger" href="./rollback.php">rollback</a>
+            <a class="btn btn-danger" href="../../api/student/rollback.php">rollback</a>
             <a class="btn btn-success" href="./create.php">Add</a>
         </div>
         <table class="table table-bordered mt-3 text-center">
