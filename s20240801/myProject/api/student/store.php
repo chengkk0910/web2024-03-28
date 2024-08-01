@@ -16,7 +16,8 @@
     $result = [
         'msg' => 'ok',
         'data' => $data,
-        'ref' => 'localhost/images/book'
+        'ref' => 'localhost/images/book',
+        'toUrl' => 'www.w3schools.com'
     ];
 
     echo json_encode($result);

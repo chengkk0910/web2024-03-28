@@ -81,13 +81,15 @@
                     type: "get",
                     url: url,
                     data: data,
-                    dataType: "json",
+                    // dataType: "json",
                     success: function(res) {
                         console.log('res', res);
                         let result = res.msg;
+                        // let toUrl = res.toUrl;
                         if (result = "ok") {
                             console.log('ajax insert ok');
-                            window.location.href = "http://localhost";
+                            // window.location.href = "http://localhost";
+                            // window.location.href = toUrl;
                         }
                     }
                 });
