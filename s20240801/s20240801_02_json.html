@@ -22,10 +22,13 @@
                 <tr>
                     <th>id</th>
                     <th>locationName</th>
+                    <th id="time0Th">time0</th>
+                    <th id="time1Th">time1</th>
+                    <th id="time2Th">time2</th>
                 </tr>
             </thead>
             <tbody id="myTobody">
-                                   
+
             </tbody>
         </table>
     </div>
@@ -39,7 +42,11 @@
         // console.log('weatherUrl', weatherUrl);
         $(document).ready(function () {
             // bind
-            const myTobody =$('#myTobody');
+            const myTobody = $('#myTobody');
+            const time0Th = $('#time0Th');
+            const time1Th = $('#time1Th');
+            const time2Th = $('#time2Th');
+            
             // let tmp =`
             //     <tr>
             //         <td>1</td>
@@ -75,6 +82,15 @@
                     let data = res.records.location;
                     console.log('data', data);
 
+                    let time0Tilte = res.records.location[1].weatherElement[4].time[0].startTime;
+                    let time1Tilte = res.records.location[1].weatherElement[4].time[1].startTime;
+                    let time2Tilte = res.records.location[1].weatherElement[4].time[2].startTime;
+                    console.log('time0Tilte',time0Tilte);
+
+                    time0Th.text(time0Tilte);
+                    time1Th.text(time1Tilte);
+                    time2Th.text(time2Tilte);
+
                     // jquery
                     let result = ``;
                     $.each(data, function (key, value) {
@@ -82,10 +98,28 @@
                         // console.log('value', value);
                         console.log('value.locationName', value.locationName);
 
+                        let time0MaxT = value.weatherElement[4].time[0].parameter.parameterName;
+                        let time0MinT = value.weatherElement[2].time[0].parameter.parameterName;
+                        let time0 = `${time0MaxT} - ${time0MinT} &#8451;`;
+
+                        let time1MaxT = value.weatherElement[4].time[1].parameter.parameterName;
+                        let time1MinT = value.weatherElement[2].time[1].parameter.parameterName;
+                        let time1 = `${time1MaxT} - ${time1MinT} &#8451;`;
+
+                        let time2MaxT = value.weatherElement[4].time[2].parameter.parameterName;
+                        let time2MinT = value.weatherElement[2].time[2].parameter.parameterName;
+                        let time2 = `${time2MaxT} - ${time2MinT} &#8451;`;
+                        console.log('time0MaxT', time0MaxT);
+                        console.log('time0MinT', time0MinT);
+                        console.log('time0',time0);
+
                         result = `
                                 <tr>
-                                    <td>${key}</td>
+                                    <td>${key + 1}</td>
                                     <td>${value.locationName}</td>
+                                    <td>${time0}</td>
+                                    <td>${time1}</td>
+                                    <td>${time2}</td>
                                 </tr>`;
 
                         myTobody.append(result);
