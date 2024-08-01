@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody id="myTobody">
-
+              
             </tbody>
         </table>
     </div>
@@ -101,14 +101,20 @@
                         let time0MaxT = value.weatherElement[4].time[0].parameter.parameterName;
                         let time0MinT = value.weatherElement[2].time[0].parameter.parameterName;
                         let time0 = `${time0MaxT} - ${time0MinT} &#8451;`;
+                        let time0Text = value.weatherElement[0].time[0].parameter.parameterName;
+                        let time0Svg = value.weatherElement[0].time[0].parameter.parameterValue;
 
                         let time1MaxT = value.weatherElement[4].time[1].parameter.parameterName;
                         let time1MinT = value.weatherElement[2].time[1].parameter.parameterName;
                         let time1 = `${time1MaxT} - ${time1MinT} &#8451;`;
+                        let time1Text = value.weatherElement[0].time[1].parameter.parameterName;
+                        let time1Svg = value.weatherElement[0].time[1].parameter.parameterValue;
 
                         let time2MaxT = value.weatherElement[4].time[2].parameter.parameterName;
                         let time2MinT = value.weatherElement[2].time[2].parameter.parameterName;
                         let time2 = `${time2MaxT} - ${time2MinT} &#8451;`;
+                        let time2Text = value.weatherElement[0].time[2].parameter.parameterName;
+                        let time2Svg = value.weatherElement[0].time[2].parameter.parameterValue;
                         console.log('time0MaxT', time0MaxT);
                         console.log('time0MinT', time0MinT);
                         console.log('time0',time0);
@@ -117,9 +123,9 @@
                                 <tr>
                                     <td>${key + 1}</td>
                                     <td>${value.locationName}</td>
-                                    <td>${time0}</td>
-                                    <td>${time1}</td>
-                                    <td>${time2}</td>
+                                    <td>${time0} <img src="./images/day/${time0Svg}.svg" alt=""> ${time0Text}</td>
+                                    <td>${time1} <img src="./images/day/${time1Svg}.svg" alt=""> ${time1Text}</td>
+                                    <td>${time2} <img src="./images/day/${time2Svg}.svg" alt=""> ${time2Text}</td>
                                 </tr>`;
 
                         myTobody.append(result);
