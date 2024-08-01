@@ -1,13 +1,13 @@
 <?php
 include "../../class/base.php";
 
-$students = new DB('students');
-// $data = $students->getAll();
-// $data = $students->setRank();
-// $data = $students->getAllSetRank();
-$data = $students->getAllSetRank();
+$teachers = new DB('teachers');
+// $data = $teachers->getAll();
+// $data = $teachers->setRank();
+// $data = $teachers->getAllSetRank();
+$data = $teachers->getAllSetRank();
 
-// $appleDB = new DB('students');
+// $appleDB = new DB('teachers');
 // $data = $appleDB->getAll();
 // dd($data);
 
@@ -64,6 +64,7 @@ $data = $students->getAllSetRank();
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
         <div class="container-fluid">
             <ul class="navbar-nav">
@@ -77,12 +78,13 @@ $data = $students->getAllSetRank();
         </div>
     </nav>
 
+
     <div class="container mt-3">
-        <h2>Students List</h2>
+        <h2>teachers List</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
         <div class="text-end">
             <!-- <button type="button" class="btn btn-success">Add</button> -->
-            <a class="btn btn-danger" href="../../api/student/rollback.php">rollback</a>
+            <a class="btn btn-danger" href="../../api/teacher/rollback.php">rollback</a>
             <a class="btn btn-success" href="./create.php">Add</a>
         </div>
         <table class="table table-bordered mt-3 text-center">
@@ -117,7 +119,7 @@ $data = $students->getAllSetRank();
                         <td><?= $value['rank']; ?></td>
                         <td class="text-start">
                             <a class="btn btn-warning" href="./edit.php?id=<?= $value['id']; ?>">Edit</a>
-                            <a class="btn btn-danger" href="../../api/student/del.php?id=<?= $value['id']; ?>">Del</a>
+                            <a class="btn btn-danger" href="../../api/teacher/del.php?id=<?= $value['id']; ?>">Del</a>
                             <!-- <button type="button" class="btn btn-warning">
                                 Edit
                             </button> -->

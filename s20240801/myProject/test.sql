@@ -6,6 +6,14 @@ CREATE TABLE `db0722`.`students` (
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+-- 建立table
+CREATE TABLE `db0722`.`teachers` (
+    `id` INT(10) NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `mobile` VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB CHARSET = utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 -- 清空資料表
 TRUNCATE TABLE `db0722`.`students` -- 刪除資料表
 DROP TABLE `db0722`.`students` -- 查詢
